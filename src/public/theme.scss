@@ -1,0 +1,71 @@
+@import '../_global';
+
+// Absolute Header
+body {
+	&:not(.admin-bar) {
+		#{$themePrefix} {
+			&-header {
+				#{$varPrefix}-t: 0;
+			}
+		}
+	}
+}
+
+//Theme CSS
+
+#{$themePrefix} {
+	//Absolute Header
+	&-header {
+		#{$varPrefix}-pos: absolute;
+		#{$varPrefix}-t: var(--wp-admin--admin-bar--height);
+		#{$varPrefix}-l: 0;
+		#{$varPrefix}-r: 0;
+		#{$varPrefix}-z-idx: 9;
+	}
+
+	// Hero Banner
+	&-hero {
+		&-banner {
+			#{$varPrefix}-pos: relative;
+
+			@include respond-above(xxl) {
+				min-height: 85vh !important;
+			}
+
+			&-content {
+				#{$varPrefix}-pos: relative;
+				#{$varPrefix}-z-idx: 2;
+			}
+		}
+	}
+
+	//Global Height & Width
+	&-is-h-w {
+		&-30 {
+			$hw30: 30px;
+			#{$varPrefix}-h: $hw30;
+			#{$varPrefix}-w: $hw30;
+		}
+		&-40 {
+			$hw40: 40px;
+			#{$varPrefix}-h: $hw40;
+			#{$varPrefix}-w: $hw40;
+		}
+
+		&-60 {
+			$hw60: 60px;
+			#{$varPrefix}-h: $hw60;
+			#{$varPrefix}-w: $hw60;
+		}
+		&-70 {
+			$hw70: 70px;
+			#{$varPrefix}-h: $hw70;
+			#{$varPrefix}-w: $hw70;
+		}
+		&-80 {
+			$hw80: 80px;
+			#{$varPrefix}-h: $hw80;
+			#{$varPrefix}-w: $hw80;
+		}
+	}
+}
