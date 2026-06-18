@@ -10,6 +10,9 @@
  */
 
 ?>
+<!-- wp:group {"tagName":"main","metadata":{"name":"Main"},"align":"full","layout":{"type":"constrained"}} -->
+<main class="wp-block-group alignfull">
+
 <!-- wp:cover {"overlayColor":"tertiary","isDark":false,"align":"full"} -->
 <div class="wp-block-cover alignfull is-light"><span aria-hidden="true" class="wp-block-cover__background has-tertiary-background-color has-background-dim-100 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:spacer {"height":"200px"} -->
 <div style="height:200px" aria-hidden="true" class="wp-block-spacer"></div>
@@ -43,3 +46,6 @@
 <div style="height:200px" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer --></div></div>
 <!-- /wp:cover -->
+
+</main>
+<!-- /wp:group -->

@@ -1,11 +1,14 @@
-@import '../_global';
+@use '../_global';
+@use "../mixins";
+@use "../prefix-vars";
+
 
 // Absolute Header
 body {
 	&:not(.admin-bar) {
-		#{$themePrefix} {
+		#{prefix-vars.$themePrefix} {
 			&-header {
-				#{$varPrefix}-t: 0;
+				#{prefix-vars.$varPrefix}-t: 0;
 			}
 		}
 	}
@@ -13,28 +16,28 @@ body {
 
 //Theme CSS
 
-#{$themePrefix} {
+#{prefix-vars.$themePrefix} {
 	//Absolute Header
 	&-header {
-		#{$varPrefix}-pos: absolute;
-		#{$varPrefix}-t: var(--wp-admin--admin-bar--height);
-		#{$varPrefix}-l: 0;
-		#{$varPrefix}-r: 0;
-		#{$varPrefix}-z-idx: 9;
+		#{prefix-vars.$varPrefix}-pos: absolute;
+		#{prefix-vars.$varPrefix}-t: var(--wp-admin--admin-bar--height);
+		#{prefix-vars.$varPrefix}-l: 0;
+		#{prefix-vars.$varPrefix}-r: 0;
+		#{prefix-vars.$varPrefix}-z-idx: 9;
 	}
 
 	// Hero Banner
 	&-hero {
 		&-banner {
-			#{$varPrefix}-pos: relative;
+			#{prefix-vars.$varPrefix}-pos: relative;
 
-			@include respond-above(xxl) {
+			@include mixins.respond-above(xxl) {
 				min-height: 85vh !important;
 			}
 
 			&-content {
-				#{$varPrefix}-pos: relative;
-				#{$varPrefix}-z-idx: 2;
+				#{prefix-vars.$varPrefix}-pos: relative;
+				#{prefix-vars.$varPrefix}-z-idx: 2;
 			}
 		}
 	}
@@ -43,29 +46,29 @@ body {
 	&-is-h-w {
 		&-30 {
 			$hw30: 30px;
-			#{$varPrefix}-h: $hw30;
-			#{$varPrefix}-w: $hw30;
+			#{prefix-vars.$varPrefix}-h: $hw30;
+			#{prefix-vars.$varPrefix}-w: $hw30;
 		}
 		&-40 {
 			$hw40: 40px;
-			#{$varPrefix}-h: $hw40;
-			#{$varPrefix}-w: $hw40;
+			#{prefix-vars.$varPrefix}-h: $hw40;
+			#{prefix-vars.$varPrefix}-w: $hw40;
 		}
 
 		&-60 {
 			$hw60: 60px;
-			#{$varPrefix}-h: $hw60;
-			#{$varPrefix}-w: $hw60;
+			#{prefix-vars.$varPrefix}-h: $hw60;
+			#{prefix-vars.$varPrefix}-w: $hw60;
 		}
 		&-70 {
 			$hw70: 70px;
-			#{$varPrefix}-h: $hw70;
-			#{$varPrefix}-w: $hw70;
+			#{prefix-vars.$varPrefix}-h: $hw70;
+			#{prefix-vars.$varPrefix}-w: $hw70;
 		}
 		&-80 {
 			$hw80: 80px;
-			#{$varPrefix}-h: $hw80;
-			#{$varPrefix}-w: $hw80;
+			#{prefix-vars.$varPrefix}-h: $hw80;
+			#{prefix-vars.$varPrefix}-w: $hw80;
 		}
 	}
 }

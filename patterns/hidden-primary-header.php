@@ -16,7 +16,7 @@
 	style="border-bottom-color:var(--wp--preset--color--tertiary);border-bottom-style:solid;border-bottom-width:1px;padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignwide"><!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:image {"width":"18px","sizeSlug":"full","linkDestination":"none"} -->
+<div class="wp-block-group"><!-- wp:image {"width":"18px","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|secondary"}}} -->
 <figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/bs-icon-telephone-light-teal.png"
 style="width:18px"/></figure>
 <!-- /wp:image -->
@@ -27,7 +27,7 @@ style="width:18px"/></figure>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:image {"width":"18px","sizeSlug":"full","linkDestination":"none"} -->
+<div class="wp-block-group"><!-- wp:image {"width":"18px","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|secondary"}}} -->
 <figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/bs-icon-envelope-at-light-teal.png"
 style="width:18px"/></figure>
 <!-- /wp:image -->
@@ -38,7 +38,7 @@ style="width:18px"/></figure>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group"><!-- wp:image {"width":"18px","sizeSlug":"full","linkDestination":"none"} -->
+<div class="wp-block-group"><!-- wp:image {"width":"18px","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|secondary"}}} -->
 <figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/bs-icon-geo-alt-light-teal.png"
 style="width:18px"/></figure>
 <!-- /wp:image -->
@@ -61,20 +61,16 @@ style="width:18px"/></figure>
 
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30)">
-    <!-- wp:group {"align":"wide","style":{"position":{"type":""}},"layout":{"type":"flex","justifyContent":"space-between"}} -->
-    <div class="wp-block-group alignwide">
-    <!-- wp:pattern {"slug":"patterns-business/site-identity"} /-->
-    <!-- wp:pattern {"slug":"patterns-business/navigation-menu"} /-->
+	<!-- wp:group {"align":"wide","style":{"position":{"type":""}},"layout":{"type":"flex","justifyContent":"space-between"}} -->
+	<div class="wp-block-group alignwide">
+	<!-- wp:pattern {"slug":"patterns-business/site-identity"} /-->
+	<!-- wp:pattern {"slug":"patterns-business/navigation-menu"} /-->
 
-    </div>
-    <!-- /wp:group -->
-    
+	</div>
+	<!-- /wp:group -->
+	
 </div>
 <!-- /wp:group -->
  
 </div>
 <!-- /wp:group -->
-
-
-
-

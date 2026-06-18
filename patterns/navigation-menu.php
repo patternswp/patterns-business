@@ -10,7 +10,7 @@
  */
 
 ?>
-<!-- wp:navigation {"textColor":"default","style":{"typography":{"textTransform":"uppercase","fontSize":"14px","letterSpacing":"1px"}},"layout":{"type":"flex","setCascadingProperties":true}} -->
+<!-- wp:navigation {"textColor":"default"} -->
 	<!-- wp:home-link {"label":"<?php echo esc_html_x( 'Home', 'label', 'patterns-business' ); ?>"} /-->	
 	<!-- wp:navigation-link {"label":"<?php esc_html_e( 'About', 'patterns-business' ); ?>","url":"#"} /-->
 	<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Services', 'patterns-business' ); ?>","url":"#"} /-->

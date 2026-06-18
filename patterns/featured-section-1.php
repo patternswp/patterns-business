@@ -2,7 +2,7 @@
 /**
  * Title: Featured Section 1
  * Slug: patterns-business/featured-section-1
- * Categories: featured
+ * Categories: services, featured
  * Description: A collection of various WordPress inbuilt blocks, such as headings, paragraphs, image, groups, and buttons, arranged in different positions to form a complete page layout.
  *
  * @package    Patterns_Business
@@ -30,7 +30,7 @@
 
 <!-- wp:group {"style":{"border":{"radius":"5px","color":"#e7e7e7","style":"solid","width":"1px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|30","right":"var:preset|spacing|30"},"blockGap":"var:preset|spacing|20"},"dimensions":{"minHeight":""},"layout":{"selfStretch":"fixed","flexSize":"300px"}},"backgroundColor":"default","layout":{"type":"flex","orientation":"vertical","justifyContent":"center","verticalAlignment":"center"}} -->
 <div class="wp-block-group has-border-color has-default-background-color has-background" style="border-color:#e7e7e7;border-style:solid;border-width:1px;border-radius:5px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"style":{"dimensions":{"minHeight":""},"layout":{"selfStretch":"fit","flexSize":""},"border":{"radius":"100px"},"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}},"backgroundColor":"secondary","className":"at-m patterns-business-is-h-w-80 at-h at-w  at-flx at-al-itm-ctr at-jfy-cont-ctr","layout":{"type":"default"}} -->
-<div class="wp-block-group at-m patterns-business-is-h-w-80 at-h at-w  at-flx at-al-itm-ctr at-jfy-cont-ctr has-secondary-background-color has-background" style="border-radius:100px;margin-bottom:var(--wp--preset--spacing--30)"><!-- wp:image {"width":"40px","sizeSlug":"full","linkDestination":"none"} -->
+<div class="wp-block-group at-m patterns-business-is-h-w-80 at-h at-w  at-flx at-al-itm-ctr at-jfy-cont-ctr has-secondary-background-color has-background" style="border-radius:100px;margin-bottom:var(--wp--preset--spacing--30)"><!-- wp:image {"width":"40px","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|base"}}} -->
 <figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/bs-icon-rocket-takeoff.png"
 style="width:40px"/></figure>
 <!-- /wp:image --></div>
@@ -57,7 +57,7 @@ style="width:40px"/></figure>
 
 <!-- wp:group {"style":{"border":{"radius":"5px","color":"#e7e7e7","style":"solid","width":"1px"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|30","right":"var:preset|spacing|30"},"blockGap":"var:preset|spacing|20"},"dimensions":{"minHeight":""},"layout":{"selfStretch":"fixed","flexSize":"300px"}},"backgroundColor":"default","layout":{"type":"flex","orientation":"vertical","justifyContent":"center","verticalAlignment":"center"}} -->
 <div class="wp-block-group has-border-color has-default-background-color has-background" style="border-color:#e7e7e7;border-style:solid;border-width:1px;border-radius:5px;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30)"><!-- wp:group {"style":{"dimensions":{"minHeight":""},"layout":{"selfStretch":"fit","flexSize":""},"border":{"radius":"100px"},"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}},"backgroundColor":"secondary","className":"at-m patterns-business-is-h-w-80 at-h at-w  at-flx at-al-itm-ctr at-jfy-cont-ctr","layout":{"type":"default"}} -->
-<div class="wp-block-group at-m patterns-business-is-h-w-80 at-h at-w  at-flx at-al-itm-ctr at-jfy-cont-ctr has-secondary-background-color has-background" style="border-radius:100px;margin-bottom:var(--wp--preset--spacing--30)"><!-- wp:image {"width":"40px","sizeSlug":"full","linkDestination":"none"} -->
+<div class="wp-block-group at-m patterns-business-is-h-w-80 at-h at-w  at-flx at-al-itm-ctr at-jfy-cont-ctr has-secondary-background-color has-background" style="border-radius:100px;margin-bottom:var(--wp--preset--spacing--30)"><!-- wp:image {"width":"40px","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|base"}}} -->
 <figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/bs-icon-gem.png"
 style="width:40px"/></figure>
 <!-- /wp:image --></div>

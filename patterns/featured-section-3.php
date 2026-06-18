@@ -2,7 +2,7 @@
 /**
  * Title: Featured Section 3
  * Slug: patterns-business/featured-section-3
- * Categories: featured
+ * Categories: gallery, portfolio
  * Description: A collection of various WordPress inbuilt blocks, such as headings, paragraphs, image, groups, and buttons, arranged in different positions to form a complete page layout.
  *
  * @package    Patterns_Business

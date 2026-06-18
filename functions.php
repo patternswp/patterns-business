@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 define( 'PATTERNS_BUSINESS_PATH', trailingslashit( get_template_directory() ) );
 define( 'PATTERNS_BUSINESS_URL', trailingslashit( get_template_directory_uri() ) );
-define( 'PATTERNS_BUSINESS_VERSION', '1.0.2' );
+define( 'PATTERNS_BUSINESS_VERSION', '1.0.3' );
 define( 'PATTERNS_BUSINESS_THEME_NAME', 'patterns-business' );
 define( 'PATTERNS_BUSINESS_OPTION_NAME', 'patterns-business' );
 

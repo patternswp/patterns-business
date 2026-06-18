@@ -2,7 +2,7 @@
 /**
  * Title: Featured Section 11
  * Slug: patterns-business/featured-section-11
- * Categories: call-to-action, featured
+ * Categories: call-to-action, contact, featured
  * Description: A collection of various WordPress inbuilt blocks, such as headings, paragraphs, image, groups, and buttons, arranged in different positions to form a complete page layout.
  *
  * @package    Patterns_Business
@@ -50,7 +50,7 @@
 
 <!-- wp:group {"style":{"spacing":{"padding":{"bottom":"var:preset|spacing|20"},"blockGap":"15px"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-bottom:var(--wp--preset--spacing--20)"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|10","margin":{"top":"25px"}}},"className":"pa-contact-info","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group pa-contact-info" style="margin-top:25px"><!-- wp:image {"width":"18px","sizeSlug":"full","linkDestination":"none"} -->
+<div class="wp-block-group pa-contact-info" style="margin-top:25px"><!-- wp:image {"width":"18px","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|base"}}} -->
 <figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/bs-icon-envelope-at-navy-blue.png"
 style="width:18px"/></figure>
 <!-- /wp:image -->
@@ -61,7 +61,7 @@ style="width:18px"/></figure>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"blockGap":"10px"}},"className":"pa-contact-info","layout":{"type":"flex","flexWrap":"nowrap"}} -->
-<div class="wp-block-group pa-contact-info"><!-- wp:image {"width":"18px","sizeSlug":"full","linkDestination":"none"} -->
+<div class="wp-block-group pa-contact-info"><!-- wp:image {"width":"18px","sizeSlug":"full","linkDestination":"none","style":{"color":{"duotone":"var:preset|duotone|base"}}} -->
 <figure class="wp-block-image size-full is-resized"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/bs-icon-telephone-navy-blue.png"
 style="width:18px"/></figure>
 <!-- /wp:image -->
