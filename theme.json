@@ -131,27 +131,27 @@
                 },
                 {
                     "name": "Medium",
-                    "size": "clamp(40px, 5vw, 40px);",
+                    "size": "40px",
                     "slug": "40"
                 },
                 {
                     "name": "Regular",
-                    "size": "clamp(25px, 5vw, 50px);",
+                    "size": "clamp(25px, 5vw, 50px)",
                     "slug": "50"
                 },
                 {
                     "name": "Large",
-                    "size": "clamp(30px, 7vw, 60px);",
+                    "size": "clamp(30px, 7vw, 60px)",
                     "slug": "60"
                 },
                 {
                     "name": "X-Large",
-                    "size": "clamp(35px, 7vw, 70px);",
+                    "size": "clamp(35px, 7vw, 70px)",
                     "slug": "70"
                 },
                 {
                     "name": "XX-Large",
-                    "size": "clamp(40px, 10vw, 80px);",
+                    "size": "clamp(40px, 10vw, 80px)",
                     "slug": "80"
                 }
             ],

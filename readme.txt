@@ -73,6 +73,10 @@ Source: https://github.com/twbs/icons
 
 == Changelog ==
 
+= 2.0.0 =
+* Hardening: 2.0.0 release — a11y (WCAG 1.4.12), review notice defaults, theme.json correctness, deploy.js parity with boilerplate.
+
+
 = 1.0.3 =
 * Organized typography folder
 * Converted fonts format .ttf to .woff2
