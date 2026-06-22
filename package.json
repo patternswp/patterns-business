@@ -17,12 +17,9 @@
         "start:public": "wp-scripts start src/public.js --output-path=build/public",
         "start": "npm-run-all --parallel start:adminInfo start:adminNotice start:editor start:public",
         "packages-update": "wp-scripts packages-update",
-        "makejsstring": "node .bin/make-string.js",
         "makepot": "wp i18n make-pot . languages/patterns-business.pot --skip-js --exclude=src,vendor,node_modules --merge=languages/js.pot",
         "deploy": "npm-run-all build makepot deploy-bundle",
         "initial-rename": "node .bin/initial-rename.js",
-        "rename": "node .bin/rename-filename.js",
-        "deploy-bundle": "node .bin/deploy.js",
         "deploy:bundle": "node .bin/deploy.js",
         "lint-js": "wp-scripts lint-js src/"
     },
