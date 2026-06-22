@@ -17,7 +17,7 @@
         "start:public": "wp-scripts start src/public.js --output-path=build/public",
         "start": "npm-run-all --parallel start:adminInfo start:adminNotice start:editor start:public",
         "packages-update": "wp-scripts packages-update",
-        "makepot": "wp i18n make-pot . languages/patterns-business.pot --skip-js --exclude=src,vendor,node_modules --merge=languages/js.pot",
+        "makepot": "wp i18n make-pot . languages/patterns-business.pot --skip-js --exclude=src,vendor,node_modules,build,deploy --merge=languages/js.pot",
         "deploy": "npm-run-all build makepot deploy-bundle",
         "initial-rename": "node .bin/initial-rename.js",
         "deploy:bundle": "node .bin/deploy.js",
