@@ -1,0 +1,40 @@
+# Version control
+/.git
+/.github
+.gitattributes
+.gitignore
+.distignore
+
+# Build/dev artifacts (NOT /build — it's required at runtime)
+/node_modules
+/src
+/deploy
+/package-lock.json
+/package.json
+/yarn.lock
+/.babelrc
+/.editorconfig
+/.eslintrc
+/.prettierrc
+/stylelint.config.js
+/phpcs.xml
+/.dist
+/wp-env.json
+/.wp-env.json
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+*.log
+*.swp
+*.swo
+
+# Doc files for GitHub (use readme.txt for WordPress)
+/README.md
+/readme.md
+
+# Plugin/theme zip (never commit)
+/*.zip
+
+# WordPress.org assets dir (rsync'd to /assets separately, not part of theme)
+/.wordpress-org

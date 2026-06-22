@@ -1,0 +1,95 @@
+name: Deploy to WordPress.org
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (no commit)'
+        required: false
+        default: 'false'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build theme
+        run: |
+          if [ -f package.json ]; then
+            npm ci --no-audit --no-fund
+            npm run deploy
+          fi
+
+      - name: Deploy to WordPress.org SVN
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: |
+          set -eo
+          THEME_SLUG="${{ github.event.repository.name }}"
+          VERSION="${{ github.ref_name }}"
+          VERSION="${VERSION#v}"
+          
+          SVN_URL="https://themes.svn.wordpress.org/${THEME_SLUG}/"
+          SVN_DIR="${HOME}/svn-${THEME_SLUG}"
+          
+          echo "→ Deploying $THEME_SLUG v$VERSION"
+          
+          svn checkout --depth immediates \
+            --non-interactive --trust-server-cert \
+            --username "$SVN_USERNAME" --password "$SVN_PASSWORD" \
+            "$SVN_URL" "$SVN_DIR"
+          cd "$SVN_DIR"
+          svn update --set-depth infinity assets
+          svn update --set-depth infinity trunk
+          svn update --set-depth immediates tags
+          
+          if [[ -d "tags/$VERSION" ]]; then
+            echo "ℹ Version $VERSION already published"
+            exit 0
+          fi
+          
+          if [[ -e "$GITHUB_WORKSPACE/.distignore" ]]; then
+            rsync -rc --exclude-from="$GITHUB_WORKSPACE/.distignore" \
+              "$GITHUB_WORKSPACE/" trunk/ --delete --delete-excluded
+          else
+            rsync -rc "$GITHUB_WORKSPACE/" trunk/ --delete --delete-excluded
+          fi
+          
+          if [[ -d "$GITHUB_WORKSPACE/.wordpress-org/" ]]; then
+            rsync -rc "$GITHUB_WORKSPACE/.wordpress-org/" assets/ --delete
+          fi
+          
+          svn add . --force > /dev/null
+          svn status | grep '^\!' | sed 's/! *//' | xargs -I% svn rm %@ > /dev/null 2>&1 || true
+          
+          svn cp trunk "tags/$VERSION"
+          
+          for ext in png jpg gif svg; do
+            find assets/ -maxdepth 1 -name "*.${ext}" 2>/dev/null | while read f; do
+              case $ext in
+                png) svn propset svn:mime-type "image/png" "$f" 2>/dev/null || true ;;
+                jpg) svn propset svn:mime-type "image/jpeg" "$f" 2>/dev/null || true ;;
+                gif) svn propset svn:mime-type "image/gif" "$f" 2>/dev/null || true ;;
+                svg) svn propset svn:mime-type "image/svg+xml" "$f" 2>/dev/null || true ;;
+              esac
+            done
+          done
+          
+          svn update
+          echo "→ Files to be committed:"
+          svn status
+          
+          if [[ "$DRY_RUN" == "true" ]]; then
+            echo "→ DRY RUN: No commit performed"
+          else
+            svn commit -m "Update to version $VERSION from GitHub" \
+              --no-auth-cache --non-interactive \
+              --username "$SVN_USERNAME" --password "$SVN_PASSWORD"
+            echo "✓ Deployed $THEME_SLUG v$VERSION"
+          fi
