@@ -163,7 +163,7 @@ if ( ! function_exists( 'patterns_business_install_plugin' ) ) {
 						/* translators: %1$s is the plugin name, %2$s is error message */
 						esc_html__( 'Error retrieving information for plugin "%1$s": %2$s', 'patterns-business' ),
 						esc_html( $name ),
-						esc_html( $result->get_error_message() )
+						esc_html( $api->get_error_message() )
 					),
 				);
 			}
@@ -402,7 +402,7 @@ if ( ! function_exists( 'patterns_business_default_user_meta' ) ) :
 	function patterns_business_default_user_meta() {
 		$default_user_meta = array(
 			'remove_review_notice_permanently'         => false,
-			'remove_review_notice_temporary_date_time' => time(),
+			'remove_review_notice_temporary_date_time' => 0,
 		);
 
 		return apply_filters( 'patterns_business_default_user_meta', $default_user_meta );
@@ -476,7 +476,7 @@ if ( ! function_exists( 'patterns_business_file_system' ) ) {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @return string|WP_Error directory path or WP_Error object if no permission
+	 * @return WP_Filesystem Initialized WordPress filesystem object.
 	 *
 	 * @author     codersantosh <codersantosh@gmail.com>
 	 */
@@ -491,12 +491,17 @@ if ( ! function_exists( 'patterns_business_file_system' ) ) {
 	}
 }
 
-if ( ! function_exists( 'patterns_business_parse_changelog' ) ) {
+if ( ! function_exists( 'patterns_business_parse_changelog' ) ) :
 	/**
-	 * Parse changelog
+	 * Parse the changelog section from the theme's readme.txt.
+	 *
+	 * Reads the WP.org-format readme, finds the == Changelog == section,
+	 * and returns the resulting text (including per-version headings
+	 * like `= 1.2.3 =` and blank lines between versions), sanitized via
+	 * wp_kses_post().
 	 *
 	 * @since 1.0.0
-	 * @return string
+	 * @return string Sanitized changelog text, or empty string if unavailable.
 	 *
 	 * @author     codersantosh <codersantosh@gmail.com>
 	 */
@@ -504,9 +509,12 @@ if ( ! function_exists( 'patterns_business_parse_changelog' ) ) {
 
 		$wp_filesystem = patterns_business_file_system();
 
-		$changelog_file = apply_filters( 'patterns_business_changelog_file', PATTERNS_BUSINESS_PATH . 'readme.txt' );
+		$changelog_file = apply_filters(
+			'patterns_business_changelog_file',
+			PATTERNS_BUSINESS_PATH . 'readme.txt'
+		);
 
-		/*Check if the changelog file exists and is readable.*/
+		/* Check if the changelog file exists and is readable. */
 		if ( ! $changelog_file || ! is_readable( $changelog_file ) ) {
 			return '';
 		}
@@ -522,16 +530,16 @@ if ( ! function_exists( 'patterns_business_parse_changelog' ) ) {
 		$changelog = '';
 
 		if ( preg_match( $regexp, $content, $matches ) ) {
-			$changes = explode( '\r\n', trim( $matches[1] ) );
+			$changes = preg_split( '/\R/', trim( $matches[1] ) );
 
 			foreach ( $changes as $index => $line ) {
-				$changelog .= wp_kses_post( preg_replace( '~(=\s*Version\s*(\d+(?:\.\d+)+)\s*=|$)~Uis', '', $line ) );
+				$changelog .= wp_kses_post( $line ) . "\n";
 			}
 		}
 
-		return wp_kses_post( $changelog );
+		return $changelog;
 	}
-}
+endif;
 
 if ( ! function_exists( 'patterns_business_get_theme_faq' ) ) :
 	/**

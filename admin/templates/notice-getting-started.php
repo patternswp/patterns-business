@@ -39,7 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<?php
 					$plugin_count = count( explode( ', ', $plugin_names ) );
 					printf(
-						/* translators: %s: singular/plular . */
+						/* translators: %s: singular/plural . */
 						esc_html__( 'Clicking the button below will install and activate the following %s:', 'patterns-business' ),
 						$plugin_count > 1 ? esc_html__( 'plugins', 'patterns-business' ) : esc_html__( 'plugin', 'patterns-business' )
 					);
